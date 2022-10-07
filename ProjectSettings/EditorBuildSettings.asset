@@ -1,0 +1,12 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1045 &1
+EditorBuildSettings:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Scenes:
+  - enabled: 0
+    path: Assets/MyRollABall.unity
+    guid: a4c6a0d1558159b4dbe6534e8c8951a4
+  m_configObjects:
+    com.unity.input.settings: {fileID: 11400000, guid: 8a21f5106e23c7747bd5896c5e51910c, type: 2}
