@@ -3,6 +3,7 @@ using System.Collections;
 
 public class CamControl : MonoBehaviour
 {
+    //This entire thing makes me want to commit die
     public Camera CameraController;
     public GameObject Player;
     public float speed = 2f;
