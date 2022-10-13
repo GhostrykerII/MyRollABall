@@ -14,7 +14,7 @@ public class CamControl : MonoBehaviour
         offset = transform.position - Player.transform.position;
     }
 
-    void LateUpdate()
+    void FixedUpdate()
     {
         transform.position = Player.transform.position + offset;
     }

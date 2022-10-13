@@ -20,7 +20,7 @@ public class RotationController : MonoBehaviour
     void RotateLeft() => Rotate(-90);
 
     // Update is called once per frame
-    void LateUpdate()
+    void FixedUpdate()
     {
         transform.position = Vector3.Lerp(transform.position, _target.position, _smoothSpeed);
         transform.rotation = Quaternion.Lerp(transform.rotation, _desiredRotation, _smoothRotation);
