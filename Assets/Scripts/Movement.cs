@@ -38,9 +38,9 @@ public class Movement : MonoBehaviour
 
     void FixedUpdate()
     {
-        Vector3 movement = new Vector3 (movementX, 0.0f, movementY);
+        Vector3 movement = new Vector3(movementX, 0.0f, movementY);
 
-        rb.AddForce(movement * speed);   
+        rb.AddForce(movement * speed);
     }
 
     private void OnTriggerEnter(Collider other)
@@ -52,6 +52,25 @@ public class Movement : MonoBehaviour
 
             SetCountText();
         }
+
+    }
+
+    private void Update()
+    {
+        if (transform.position.y < -2)
+        {
+            {
+                /*transform.position.x = -136.5323;
+                transform.position.y = 0.9000003;
+                transform.position.z = 33.71458;*/
+                transform.position = new Vector3(-136.5323f, 0.9000003f, 33.71458f);
+                /*transform.rotation.x = 1;
+                transform.rotation.y = 1;
+                transform.rotation.z = 1;*/
+            }
+        }
+        
+
         
     }
 }
