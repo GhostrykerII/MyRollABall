@@ -5,6 +5,8 @@ using UnityEngine;
 public class TriggerPlayAnimation : MonoBehaviour
 {
     public GameObject AnimatedObject;
+    //public GameObject AnimatedObject2;
+    //public GameObject AnimatedObject3;  Basically, this how you'll make this work with multiple objects.
 
     private Animator _animator;
 
