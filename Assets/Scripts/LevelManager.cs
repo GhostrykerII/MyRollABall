@@ -1,45 +1,16 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.SceneManagement;
-
-// Sam Robichaud 
-// NSCC Truro 2022
 
 public class LevelManager : MonoBehaviour
 {
 
-    public int nextScene;
-    private int currentScene;
-
-
-    public void LoadNextlevel()
-    {
-        nextScene = SceneManager.GetActiveScene().buildIndex + 1;
-
-        if (nextScene <= 5)
+        void OnTriggerEnter(Collider ChangeScene) // can be Collider HardDick if you want.. I'm not judging you
         {
-            SceneManager.LoadScene(nextScene);
-        }
-
-        else if (nextScene >= 6)
-        {
-            Debug.Log("All levels complete!");
+            if (ChangeScene.gameObject.CompareTag("Player"))
+            {
+                Application.LoadLevelAdditive(2); //1 is the build order it could be 1065 for you if you have that many scenes
+            }
         }
     }
 
-    public void LoadMainMenu()
-    {
-        SceneManager.LoadScene(0);
-    }
-
-    public void ReloadCurrentScene()
-    {
-        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
-    }
-
-    public void QuitGame()
-    {
-        Application.Quit();
-    }
-}
