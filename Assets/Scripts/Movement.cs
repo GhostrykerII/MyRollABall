@@ -12,11 +12,15 @@ public class Movement : MonoBehaviour
     private int count;
     private float movementX;
     private float movementY;
+    private int CamState;
+    public int MaxSpeed;
 
 
     // Start is called before the first frame update
     void Start()
     {
+        MaxSpeed = 20;
+        CamState = 0;
         rb = GetComponent<Rigidbody>();
         count = 0;
 
@@ -41,6 +45,8 @@ public class Movement : MonoBehaviour
         Vector3 movement = new Vector3(movementX, 0.0f, movementY);
 
         rb.AddForce(movement * speed);
+
+
     }
 
     private void OnTriggerEnter(Collider other)
@@ -57,20 +63,37 @@ public class Movement : MonoBehaviour
 
     private void Update()
     {
+
+        if (rb.velocity.magnitude >= MaxSpeed)
+        {
+            rb.velocity = rb.velocity.normalized * MaxSpeed;
+        }
+
+        if (Input.GetMouseButtonDown(0))
+            {
+                CamState--;
+        }
+
+            if (Input.GetMouseButtonDown(1))
+            {
+                CamState++;
+        }
+
+        if (CamState == 5)
+            CamState = 0;
+        if (CamState == -1)
+            CamState = 4;
+
         if (transform.position.y < -13)
         {
-            {
-                /*transform.position.x = -136.5323;
-                transform.position.y = 0.9000003;
-                transform.position.z = 33.71458;*/
-                transform.position = new Vector3(-136.5323f, 1.565f, 33.71458f);
-                /*transform.rotation.x = 1;
-                transform.rotation.y = 1;
-                transform.rotation.z = 1;*/
+
+            transform.position = new Vector3(-136.5323f, 1.565f, 33.71458f);
+
             }
         }
-        
+
 
         
+    
+        
     }
-}
