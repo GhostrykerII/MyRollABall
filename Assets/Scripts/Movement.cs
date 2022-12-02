@@ -57,13 +57,13 @@ public class Movement : MonoBehaviour
 
     private void Update()
     {
-        if (transform.position.y < -2)
+        if (transform.position.y < -13)
         {
             {
                 /*transform.position.x = -136.5323;
                 transform.position.y = 0.9000003;
                 transform.position.z = 33.71458;*/
-                transform.position = new Vector3(-136.5323f, 0.9000003f, 33.71458f);
+                transform.position = new Vector3(-136.5323f, 1.565f, 33.71458f);
                 /*transform.rotation.x = 1;
                 transform.rotation.y = 1;
                 transform.rotation.z = 1;*/
